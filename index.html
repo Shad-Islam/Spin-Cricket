@@ -3,10 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spin Cricket</title>
+    <title>Virtual Cricket</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="container">s</div>
+    <div class="container">
+      <div class="container__heading">
+        <h1>Virtual Cricket</h1>
+        <p>
+          Each team will have five wickets and each team will play one over of
+          the game
+        </p>
+      </div>
+      <div class="container__playground">
+        <div class="teamOne">
+          <h2>Team One</h2>
+          <p id="teamOneScore">Score 0 - 0</p>
+          <p id="teamOneWickets">Wickets 0</p>
+        </div>
+        <div class="score-board">
+          <h2 id="out"></h2>
+          <button class="play-button" id="playButton" onclick="simulateBall()">
+            Play Ball
+          </button>
+        </div>
+        <div class="teamTwo">
+          <h2>Team Two</h2>
+          <p id="teamTwoScore">Score 0 - 0</p>
+          <p id="teamTwoWickets">Wickets 0</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
