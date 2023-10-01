@@ -8,8 +8,8 @@ let teamTwoBalls = 0;
 
 const availableInputs = [1, 2, 3, 4, 5, 6, 0, "Catch", "Bold"];
 let currentPlayer = "Team One";
-let ballsPerOver = 6; // Each team plays one over (6 balls)
-let maxWickets = 5; // Maximum of 5 wickets for each team
+let ballsPerOver = 6; 
+let maxWickets = 5; 
 
 function getRandomInput() {
   const randomIndex = Math.floor(Math.random() * availableInputs.length);
@@ -51,25 +51,17 @@ function simulateBall() {
     }
 
     if (input === "Catch" || input === "Bold") {
-      // Batsman dismissed
+     
       teamOneWickets++;
     } else {
-      // Update score based on the input
+      
       teamOneScore += input;
     }
-
-    // Update balls for Team One
     teamOneBalls++;
-
-    // Update the score display for Team One
     updateTeamOneScore();
-
-    // Display the ball's outcome
     document.getElementById(
       "out"
     ).textContent = `Ball ${teamOneBalls}: ${input}`;
-
-    // Check if Team One has reached the maximum wickets
     if (teamOneWickets === maxWickets) {
       switchTeam();
       document.getElementById("playButton").textContent =
@@ -78,9 +70,8 @@ function simulateBall() {
   } else if (currentPlayer === "Team Two" && teamTwoBalls < ballsPerOver) {
     const input = getRandomInput();
 
-    // Check if the over is complete before checking for wickets
     if (teamTwoBalls === ballsPerOver - 1) {
-      // Implement logic for determining the winner and ending the game
+     
       if (teamOneScore > teamTwoScore) {
         document.getElementById("out").textContent = "Team One Wins!";
       } else if (teamTwoScore > teamOneScore) {
@@ -93,25 +84,15 @@ function simulateBall() {
     }
 
     if (input === "Catch" || input === "Bold") {
-      // Batsman dismissed
       teamTwoWickets++;
     } else {
-      // Update score based on the input
       teamTwoScore += input;
     }
-
-    // Update balls for Team Two
     teamTwoBalls++;
-
-    // Update the score display for Team Two
     updateTeamTwoScore();
-
-    // Display the ball's outcome
     document.getElementById(
       "out"
     ).textContent = `Ball ${teamTwoBalls}: ${input}`;
-
-    // Check if Team Two has reached the maximum wickets
     if (teamTwoWickets === maxWickets) {
       switchTeam();
       document.getElementById("playButton").textContent =
